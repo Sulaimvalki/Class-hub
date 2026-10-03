@@ -22,11 +22,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Upload Class Hub
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./classhub
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Upload Class Hub
+    uses: actions/upload-pages-artifact@v3
+    with:
+      path: ./classhub
 
       - name: Deploy to GitHub Pages
         id: deployment
