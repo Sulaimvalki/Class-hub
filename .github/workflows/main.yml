@@ -22,14 +22,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Upload Class Hub
-    uses: actions/upload-pages-artifact@v3
-    with:
-      path: ./classhub
+      - name: Upload Class Hub
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./classhub
 
       - name: Deploy to GitHub Pages
         id: deployment
