@@ -4249,7 +4249,9 @@ if (section === "notes") {
         ? "./files/c-programming-module-1-notes.pdf"
         : subject.name === "Programming in C" && number === 2
             ? "./files/c-programming-module-2-notes.pdf"
-            : (classHubContent.notes?.[subject.name]?.[number - 1] || "");
+            : subject.name === "Physics" && number === 1
+                ? "./files/physics-module-1-notes.pdf"
+                : (classHubContent.notes?.[subject.name]?.[number - 1] || "");
 } else if (section === "pyq") {
     url = classHubContent.pyq?.[subject.name]?.[number - 1] || "";
 }
