@@ -4247,7 +4247,9 @@ function openModule(subject, module, section) {
 if (section === "notes") {
     url = subject.name === "Programming in C" && number === 1
         ? "./files/c-programming-module-1-notes.pdf"
-        : (classHubContent.notes?.[subject.name]?.[number - 1] || "");
+        : subject.name === "Programming in C" && number === 2
+            ? "./files/c-programming-module-2-notes.pdf"
+            : (classHubContent.notes?.[subject.name]?.[number - 1] || "");
 } else if (section === "pyq") {
     url = classHubContent.pyq?.[subject.name]?.[number - 1] || "";
 }
