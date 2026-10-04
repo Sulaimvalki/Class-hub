@@ -3392,10 +3392,22 @@ saveStudentName(typedName);
                 result.notes[subject.name] = ["", "", "", ""];
 
                 result.pyq[subject.name] = ["", "", "", ""];
-                result.resources[subject.name] = {
-                    videos: [],
-                    links: []
-                };
+if (subject.name === "Programming in C") {
+    result.resources[subject.name] = {
+        videos: [
+            {
+                title: "Complete C Language Tutorial - Apna College",
+                url: "https://youtu.be/irqbmMNs2Bo"
+            }
+        ],
+        links: []
+    };
+} else {
+    result.resources[subject.name] = {
+        videos: [],
+        links: []
+    };
+}
             });
 
             return result;
