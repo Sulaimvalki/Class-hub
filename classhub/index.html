@@ -4244,11 +4244,13 @@ function openModule(subject, module, section) {
     let url = "";
     const number = module.number || 1;
 
-    if (section === "notes") {
-        url = classHubContent.notes?.[subject.name]?.[number - 1] || "";
-    } else if (section === "pyq") {
-        url = classHubContent.pyq?.[subject.name]?.[number - 1] || "";
-    }
+if (section === "notes") {
+    url = subject.name === "Programming in C" && number === 1
+        ? "./files/c-programming-module-1-notes.pdf"
+        : (classHubContent.notes?.[subject.name]?.[number - 1] || "");
+} else if (section === "pyq") {
+    url = classHubContent.pyq?.[subject.name]?.[number - 1] || "";
+}
 
 const kindText =
     section === "notes"
