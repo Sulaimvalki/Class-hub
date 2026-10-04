@@ -4029,7 +4029,9 @@ function openLab(subject) {
 
     contentTitle.textContent = subject.name + " Lab Manual";
 
-    const pdf = classHubContent.lab[subject.name] || "";
+   const pdf = subject.name === "Programming in C"
+    ? "./files/c-programming-lab-manual.pdf"
+    : (classHubContent.lab[subject.name] || "");
 
     if (pdf) {
         contentBox.innerHTML = `
