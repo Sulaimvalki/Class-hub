@@ -5,8 +5,8 @@
 <head>
     <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#6c7cff">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
 
     <meta charset="UTF-8">
 
@@ -3434,11 +3434,6 @@ saveStudentName(typedName);
                     Object.keys(fresh.lab).forEach(subject => {
                         fresh.lab[subject] = saved.lab[subject] || "";
                     });
-
-                    // Use the GitHub Pages PDF for Programming in C.
-                    if (!fresh.lab["Programming in C"] || fresh.lab["Programming in C"].startsWith("file:///")) {
-                        fresh.lab["Programming in C"] = "files/c-programming-lab-manual.pdf";
-                    }
                 }
             } catch (error) {
                 return fresh;
@@ -4904,7 +4899,6 @@ function getAIResponse(message) {
         ========================================= */
 
         updateDate();
-        refreshAdminPanel();
 /* Returning student: skip login and open Home directly */
 const savedStudentName = getSavedStudentName();
 
