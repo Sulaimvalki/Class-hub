@@ -4316,7 +4316,9 @@ if (section === "notes") {
     ? "./files/electrical-module-1-notes.pdf"
                     : (classHubContent.notes?.[subject.name]?.[number - 1] || "");
 } else if (section === "pyq") {
-    url = classHubContent.pyq?.[subject.name]?.[number - 1] || "";
+    url = subject.name === "Programming in C" && number === 1
+        ? "https://vtu.ac.in/pdf/QP/1BEIT105.pdf"
+        : (classHubContent.pyq?.[subject.name]?.[number - 1] || "");
 }
 
 const kindText =
