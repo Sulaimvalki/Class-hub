@@ -4937,10 +4937,9 @@ function getAIResponse(message) {
     if (moduleMatch && section !== "resources") {
         const number = Number(moduleMatch[1]);
         const selectedModule = {
-          title:
-    section === "notes"
-        ? "Module " + number
-        : "Module " + number + " PYQ",
+         title: section === "notes"
+    ? "Module " + number
+    : number + (number === 1 ? "st PYQ" : number === 2 ? "nd PYQ" : number === 3 ? "rd PYQ" : "th PYQ"),
             description: "",
             number,
             content: ""
