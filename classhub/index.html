@@ -4315,12 +4315,17 @@ if (section === "notes") {
 : subject.name === "Electrical Engineering" && number === 1
     ? "./files/electrical-module-1-notes.pdf"
                     : (classHubContent.notes?.[subject.name]?.[number - 1] || "");
-} else if (section === "pyq") {
+                   } else if (section === "pyq") {
     url = subject.name === "Programming in C" && number === 1
         ? "https://vtu.ac.in/pdf/QP/1BEIT105.pdf"
-        : (classHubContent.pyq?.[subject.name]?.[number - 1] || "");
+        : subject.name === "Physics" && number === 1
+            ? "https://vtu.ac.in/pdf/QP/1BPHYS102.pdf"
+            : subject.name === "Mathematics" && number === 1
+                ? "https://vtu.ac.in/pdf/QP/1BMATS101.pdf"
+                : subject.name === "Electrical Engineering" && number === 1
+                    ? "https://vtu.ac.in/pdf/QP/1BESC104B.pdf"
+                    : (classHubContent.pyq?.[subject.name]?.[number - 1] || "");
 }
-
 const kindText =
     section === "notes"
         ? "Notes PDF"
