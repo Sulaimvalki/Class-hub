@@ -4222,11 +4222,11 @@ function openSubject(subject, section) {
             title: "Module " + number,
             description: subject.name + " - Module " + number
         }));
-    }  else if (section === "pyq") {
+  }  else if (section === "pyq") {
     cards = [1, 2, 3, 4].map(number => ({
         number,
-        title: "Module " + number + " PYQ",
-        description: "Open the PDF for Module " + number
+        title: number + (number === 1 ? "st PYQ" : number === 2 ? "nd PYQ" : number === 3 ? "rd PYQ" : "th PYQ"),
+        description: "Open the PDF for PYQ " + number
     }));
 }
 
